@@ -1,7 +1,7 @@
 let deckId
-let drawCardsBtn = document.getElementById('draw-cards')
-let cards = document.getElementById('cards')
-let cardSlot = document.getElementsByClassName('cardSlot')
+const drawCardsBtn = document.getElementById('draw-cards')
+const cards = document.getElementById('cards')
+const cardSlot = document.getElementsByClassName('cardSlot')
 
 function handleClick() {
     fetch('https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/')

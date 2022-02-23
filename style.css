@@ -26,7 +26,6 @@ section {
         'cards'
         'buttons';
     margin: 2em auto;
-    width: 25%;
 }
 
 #cards {
@@ -44,8 +43,11 @@ section {
     border: 2px solid var(--yellow);
     border-radius: 8px;
     height: 318px;
+    width: 230px;
+}
+
+.cardSlot:nth-of-type(1) {
     margin-bottom: 1em;
-    width: 50%;
 }
 
 button {
@@ -53,12 +55,13 @@ button {
     border: none;
     background: var(--yellow);
     color: #1a4a1c;
-    display: inline-block;
+    display: block;
     font-weight: 700;
     font-size: 1.5em;
-    margin-bottom: 0.5em;
+    margin: 0 auto 0.5em auto;
     padding: 0.5em 1em;
-    width: 100%;
+    min-width: 230px;
+    width: 25%;
 }
 
 button:hover,
