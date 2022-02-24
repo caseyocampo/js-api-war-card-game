@@ -7,16 +7,22 @@
     --yellow: #ffae15;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     background: #308834;
     background-image: linear-gradient(#1a4a1c, #308834);
     color: var(--yellow);
     font-family: arial, sans-serif;
-    height: calc(100vh - 4em);
-    padding: 2em 1em;
+    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 h1 {
+    padding: 2em 1em 1em 1em;
     text-align: center;
 }
 
@@ -25,7 +31,6 @@ section {
     grid-template-areas:
         'cards'
         'buttons';
-    margin: 2em auto;
 }
 
 #cards {
@@ -69,11 +74,13 @@ button:focus {
     cursor: pointer;
 }
 
+button:disabled,
 button.disabled,
 button.disabled:hover,
 button.disabled:focus {
     background: #91897a;
     cursor: auto;
+    cursor: not-allowed;
 }
 
 img.card {

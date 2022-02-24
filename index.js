@@ -15,6 +15,7 @@ function handleClick() {
             drawCardsBtn.classList.remove('disabled')
             cardsRemaining.textContent = `Cards remaining: ${data.remaining}`
             cardsRemaining.style.visibility = 'visible'
+            drawCardsBtn.disabled = false
         })
 }
 
