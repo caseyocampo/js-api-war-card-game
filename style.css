@@ -21,7 +21,8 @@ body {
 }
 
 h1 {
-    padding: 2em 1em 0.5em 1em;
+    font-size: clamp(2em, 5vw, 3em);
+    padding: 1em 1em 0.5em 1em;
     text-align: center;
 }
 
@@ -62,7 +63,7 @@ button {
     color: #1a4a1c;
     display: block;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: clamp(1em, 5vw, 1.5em);
     margin: 0 auto 0.5em auto;
     padding: 0.5em 1em;
     min-width: 230px;
@@ -88,7 +89,19 @@ img.card {
     width: 100%;
 }
 
+@media (max-width: 400px) {
+    img.card {
+        height: auto;
+        width: 100px;
+    }
+    .cardSlot {
+        height: 138.94px;
+        width: calc(138.94px * 5 / 7);
+    }
+}
+
 #winnerTextDisplay {
+    font-size: clamp(1em, 5vw, 1.5em);
     margin: 1em;
 }
 
@@ -101,7 +114,7 @@ img.card {
 #cardsRemaining {
     background: #143a15;
     border-radius: 4px;
-    margin-bottom: 1em;
+    margin: 1em;
     padding: 1em;
     visibility: hidden;
 }
