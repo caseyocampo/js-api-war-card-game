@@ -80,3 +80,18 @@ img.card {
     height: 100%;
     width: 100%;
 }
+
+#winnerTextDisplay {
+    margin: 1em;
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#cardsRemaining {
+    visibility: hidden;
+    margin-bottom: 1em;
+}

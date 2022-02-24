@@ -1,7 +1,10 @@
 let deckId
+const cardsRemaining = document.getElementById('cardsRemaining')
+const newDeckBtn = document.getElementById('new-deck')
 const drawCardsBtn = document.getElementById('draw-cards')
 const cards = document.getElementById('cards')
 const cardSlot = document.getElementsByClassName('cardSlot')
+const winnerTextDisplay = document.getElementById('winnerTextDisplay')
 
 function handleClick() {
     fetch('https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/')
@@ -10,10 +13,11 @@ function handleClick() {
             console.log(data)
             deckId = data.deck_id
             drawCardsBtn.classList.remove('disabled')
+            cardsRemaining.style.visibility = 'visible'
         })
 }
 
-document.getElementById('new-deck').addEventListener('click', handleClick)
+newDeckBtn.addEventListener('click', handleClick)
 
 drawCardsBtn.addEventListener('click', () => {
     fetch(
@@ -29,8 +33,28 @@ drawCardsBtn.addEventListener('click', () => {
                 <img src=${data.cards[1].image} class="card" />
             `
 
+            const winnerText = determineCardWinner(data.cards[0], data.cards[1])
+            winnerTextDisplay.textContent = winnerText
+            cardsRemaining.textContent = `Cards remaining: ${data.remaining}`
+
             for (let card of cardSlot) {
                 card.style.border = 'none'
             }
         })
 })
+
+function determineCardWinner(card1, card2) {
+    // prettier-ignore
+    const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
+    "10", "JACK", "QUEEN", "KING", "ACE"]
+    const card1ValueIndex = valueOptions.indexOf(card1.value)
+    const card2ValueIndex = valueOptions.indexOf(card2.value)
+
+    if (card1ValueIndex > card2ValueIndex) {
+        return 'Card 1 wins!'
+    } else if (card1ValueIndex < card2ValueIndex) {
+        return 'Card 2 wins!'
+    } else {
+        return 'War!'
+    }
+}
