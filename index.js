@@ -13,6 +13,7 @@ function handleClick() {
             console.log(data)
             deckId = data.deck_id
             drawCardsBtn.classList.remove('disabled')
+            cardsRemaining.textContent = `Cards remaining: ${data.remaining}`
             cardsRemaining.style.visibility = 'visible'
         })
 }
@@ -36,6 +37,11 @@ drawCardsBtn.addEventListener('click', () => {
             const winnerText = determineCardWinner(data.cards[0], data.cards[1])
             winnerTextDisplay.textContent = winnerText
             cardsRemaining.textContent = `Cards remaining: ${data.remaining}`
+
+            if (data.remaining === 0) {
+                drawCardsBtn.disabled = true
+                drawCardsBtn.classList.add('disabled')
+            }
 
             for (let card of cardSlot) {
                 card.style.border = 'none'
