@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-    font-size: clamp(2em, 5vw, 3em);
+    font-size: clamp(2em, 4vw, 3em);
     padding: 1em 1em 0.5em 1em;
     text-align: center;
 }
@@ -63,7 +63,7 @@ button {
     color: #1a4a1c;
     display: block;
     font-weight: 700;
-    font-size: clamp(1em, 5vw, 1.5em);
+    font-size: clamp(1em, 4vw, 1.5em);
     margin: 0 auto 0.5em auto;
     padding: 0.5em 1em;
     min-width: 230px;
@@ -101,7 +101,7 @@ img.card {
 }
 
 #winnerTextDisplay {
-    font-size: clamp(1em, 5vw, 1.5em);
+    font-size: clamp(1em, 4vw, 1.5em);
     margin: 1em;
 }
 
