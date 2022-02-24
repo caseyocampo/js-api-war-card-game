@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-    padding: 2em 1em 1em 1em;
+    padding: 2em 1em 0.5em 1em;
     text-align: center;
 }
 
@@ -99,6 +99,9 @@ img.card {
 }
 
 #cardsRemaining {
-    visibility: hidden;
+    background: #143a15;
+    border-radius: 4px;
     margin-bottom: 1em;
+    padding: 1em;
+    visibility: hidden;
 }

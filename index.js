@@ -41,6 +41,14 @@ drawCardsBtn.addEventListener('click', () => {
             winnerTextDisplay.textContent = winnerText
             cardsRemaining.textContent = `Cards remaining: ${data.remaining}`
 
+            if (data.remaining === 0 && computerScore > userScore) {
+                winnerTextDisplay.textContent = 'Computer wins the game!'
+            } else if (data.remaining === 0 && computerScore < userScore) {
+                winnerTextDisplay.textContent = 'You win the game!'
+            } else if (data.remaining === 0 && computerScore === userScore) {
+                winnerTextDisplay.textContent = `It's a tie game!`
+            }
+
             if (data.remaining === 0) {
                 drawCardsBtn.disabled = true
                 drawCardsBtn.classList.add('disabled')
